@@ -1,0 +1,37 @@
+<%= form_tag 'query', method: :get do %>
+  <div>
+    Try to query one record at a time, by tasks.id <i>1</i> to <i>20</i>, or with...
+    <p style="font-weight: bold; color: #f00;">1 OR 1=1</p>
+  </div>
+  <div>
+    <label>SELECT * FROM tasks WHERE id =</label>
+    <%= text_field_tag :q %>
+    <%= submit_tag 'Send' %>
+  </div>
+<% end %>
+
+<div style="font-size: bold;
+            color: #555;
+            background-color: #ccc;
+            display: inline-block;
+            padding: .25rem;
+            margin-bottom: 3rem;
+            <%= 'color: #f00; font-weight: bold;' if @invalid %>">
+  <%= @query || 'Query made will be shown here' %>
+</div>
+<% if @tasks %>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>TITLE</th>
+      <th>DESCRIPTION</th>
+    </thead>
+    <% @tasks.each do |t|%>
+      <tr>
+        <td><%= t.id %></td>
+        <td><%= t.title %></td>
+        <td><%= t.desc %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
