@@ -4,8 +4,9 @@
     <p style="font-weight: bold; color: #f00;">1 OR 1=1</p>
   </div>
   <div>
-    <label>SELECT * FROM tasks WHERE id =</label>
+    <label>SELECT * FROM tasks WHERE id ='</label>
     <%= text_field_tag :q %>
+    <%= label_tag '\'' %>
     <%= submit_tag 'Send' %>
   </div>
 <% end %>

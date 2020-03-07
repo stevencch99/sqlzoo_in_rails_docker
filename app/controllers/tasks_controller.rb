@@ -4,8 +4,8 @@ class TasksController < ApplicationController
   end
 
   def query
-    @query = Task.where("tasks.id = #{params[:q]}").to_sql
-    @tasks = Task.where("tasks.id = #{params[:q]}")
+    @query = Task.where("tasks.id = '#{params[:q]}'").to_sql
+    @tasks = Task.where("tasks.id = '#{params[:q]}'")
 
     render :index
   rescue StandardError => e
