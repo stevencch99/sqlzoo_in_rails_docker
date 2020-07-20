@@ -27,8 +27,19 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+<<<<<<< Updated upstream
 
 /node_modules/
-*.swn
-*.swo
 *.swp
+*.swo
+*.swn
+=======
+node_modules/*
+>>>>>>> Stashed changes
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
